@@ -9,7 +9,7 @@ function NewsBoard({category}) {
         // let url = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${import.meta.env.VITE_API_KEY}`;
         // let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${import.meta.env.VITE_API_KEY}`;
 
-        let url = `https://api.mediastack.com/v1/news?access_key=66d7a494b391e84f5987753577a84902&categories=${category}&countries=us,gb,de`
+        let url = `https://api.mediastack.com/v1/news?access_key=${import.meta.env.VITE_API_KEY}&categories=${category}&countries=us,gb,de`
         fetch(url)
         .then(response => response.json())
         .then(data => setArticles(data.data))
